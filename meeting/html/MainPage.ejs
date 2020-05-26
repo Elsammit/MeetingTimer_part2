@@ -3,56 +3,87 @@
     <head>
         <meta charset="utf-8">
         <title>会議用タイマー</title>
+        <link rel="stylesheet" href="layout.css">
     </head>
     <body>
-        <h1>無駄な会議を撲滅しよう!!</h1>
-        <hr>
-        <form name="form_salary">
-            <h2>～月給(概算)を入力下さい～</h2>
-            <label for="Manager"><%= Manager_name %></label>
-            <input name="Manager_salary" type="number" value=<%= Manager_salary %> min="0" step="5" style="text-align: right; width:100px;"/>
-            <label>万円 &nbsp;&nbsp;</label>
-            <input name="Manager_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" />
-            <label>人</label><br>
-            <label for="GL"><%= GL_name %></label>
-            <input name="GL_salary" type="number" value=<%= GL_salary %> min="0" step="5" style="text-align: right; width:100px;" />
-            <label>万円  &nbsp;&nbsp;</label>
-            <input name="GL_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" />
-            <label>人</label><br>
-            <label for="Chief"><%= Chief_name %></label>
-            <input name="Chief_salary" type="number" value=<%=Chief_salary %> min="0" step="5" style="text-align: right; width:100px;" />
-            <label>万円  &nbsp;&nbsp;</label>
-            <input name="Chief_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" >
-            <label>人</label><br>
-            <label for="Employee"><%= Employee_name %></label>
-            <input name="Employee_salary" type="number" value=<%=Employee_salary %> min="0" step="5" style="text-align: right; width:100px;" />
-            <label>万円  &nbsp;&nbsp;</label>
-            <input name="Employee_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px; " >
-            <label>人</label><br>
-            
-        </form>
-        <form name="form_sw">
-            <h2>～会議時間測定～</h2>
-            <p>
-                <label>会議名:</label>
-                <input name="Meeting_Name" type="text"style="width:200px;" />
-            <p>
-                <input name="counter" type="text" value="00:00:00"></input>
-                <input name="start" type="button" value="スタート" onClick="start_count()" />
-                <input name="reset" type="button" value="リセット" onClick="reset_form()" />
+        <div id="Subject">
+            <div style="background:url(background.jpg)">
+                <h1>無駄な会議を撲滅しよう!!</h1>
+            </div>
+        </div>
+        <div id="Left">
+            <p class="sample">
+                <img src="OKMeeting.jpg" title="バックグランド" >
             </p>
-            <p>
-                <input name="Meeting_Money" type="text" value="0" size="5" style="font-size:100px; text-align: right;" />
-                <label style="font-size:100px;">円</label>
+            <p class="sample">
+                <img src="Meeting_Remote.jpg" title="バックグランド" >
             </p>
-            <p>
-                <label id="Before_resultID" style="font-size:100px;"></label>
-                <span style="color:#F00;">
-                    <label id="resultID" style="font-size:100px;" color="red"></label>
-                </span>
-                <label id="After_resultID" style="font-size:100px;"></label>
+        </div>
+        <div id="Right">
+            <p class="sample">
+                <img src="NGMeeting.jpg" title="バックグランド" >
             </p>
-        </form>
+            <p class="sample">
+                <img src="MeetingDrei.jpg" title="バックグランド" >
+            </p>            
+        </div>
+        <div id="Input">
+            <form name="form_salary">
+                <h2>～月給(概算)を入力下さい～</h2>
+                <label for="Manager"><%= Manager_name %></label>
+                <input name="Manager_salary" type="number" value=<%= Manager_salary %> min="0" step="5" style="text-align: right; width:100px;"/>
+                <label>万円 &nbsp;&nbsp;</label>
+                <input name="Manager_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" />
+                <label>人</label><br>
+                <label for="GL"><%= GL_name %></label>
+                <input name="GL_salary" type="number" value=<%= GL_salary %> min="0" step="5" style="text-align: right; width:100px;" />
+                <label>万円  &nbsp;&nbsp;</label>
+                <input name="GL_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" />
+                <label>人</label><br>
+                <label for="Chief"><%= Chief_name %></label>
+                <input name="Chief_salary" type="number" value=<%=Chief_salary %> min="0" step="5" style="text-align: right; width:100px;" />
+                <label>万円  &nbsp;&nbsp;</label>
+                <input name="Chief_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px;" >
+                <label>人</label><br>
+                <label for="Employee"><%= Employee_name %></label>
+                <input name="Employee_salary" type="number" value=<%=Employee_salary %> min="0" step="5" style="text-align: right; width:100px;" />
+                <label>万円  &nbsp;&nbsp;</label>
+                <input name="Employee_Num" type="number" value="0" min="0" step="1" style="text-align: right; width:35px; " >
+                <label>人</label><br>
+            </form>
+            <form name="form_sw">
+                <h2>～会議時間測定～</h2>
+                <p>
+                    <label>会議名:</label>
+                    <input name="Meeting_Name" type="text"style="width:200px;" />
+                <p>
+                    <input name="counter" type="text" value="00:00:00"></input>
+                    <input name="start" type="button" value="スタート" onClick="start_count()" />
+                    <input name="reset" type="button" value="リセット" onClick="reset_form()" />
+                </p>
+                <p>
+                    <input name="Meeting_Money" type="text" value="0" size="5" style="font-size:100px; text-align: right;" />
+                    <label style="font-size:100px;">円</label>
+                </p>
+                <p>
+                    <label id="Before_resultID" style="font-size:100px;"></label>
+                    <span style="color:#F00;">
+                        <label id="resultID" style="font-size:100px;" color="red"></label>
+                    </span>
+                    <label id="After_resultID" style="font-size:100px;"></label>
+                </p>
+            </form>
+        </div>
+        <div id="Last">
+            <div style="background:url(background.jpg)">
+                <div id="Result">
+                    <input type="button" onclick="show_result()" value="結果表示" style="width:10%;padding:10px;font-size:20px;">
+                </div>
+                <div id="Presented">
+                        <label>@presented by Elsammit</label>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="TimerProcess.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </body>

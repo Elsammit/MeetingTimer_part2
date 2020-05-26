@@ -57,7 +57,7 @@ function result_Message(){
 function sendToServer(){
     var send_money = document.form_sw.Meeting_Money.value;
     return $.ajax({
-        url:"http://自分のURL/SendMoney",//phpファイルのURL
+        url:"http://192.168.56.2:3000/SendMoney",//phpファイルのURL
         type: "post",
         data: {"money":send_money,
                 "Manager_num":document.form_salary.Manager_Num.value,
@@ -129,4 +129,7 @@ function check_digit(num){
         ret = "0" + num;
     }
     return ret;
+}
+function show_result(){
+    document.location.href = "http://192.168.56.2:3000/result";
 }

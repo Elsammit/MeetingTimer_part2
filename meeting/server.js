@@ -6,6 +6,8 @@ const sqlite = require('sqlite3').verbose();
 const db = new sqlite.Database('db/database.sqlite3');
 
 app.use(express.static('./js'));
+app.use(express.static('./css'));
+app.use(express.static('./html/img'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -100,6 +102,10 @@ app.post('/SendMoney',(req,res)=>{  // フロントエンドからの受信.
     Set_Memsalary(Memsalary);  // 役職毎の月給をDBへ保存するための関数コール.
 
     res.end()
+});
+
+app.get('/result',(req,res)=>{
+    res.send("グラフなどでまとめる予定。作成中！！");
 });
 
 app.listen(3000,()=> 
